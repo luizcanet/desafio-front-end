@@ -1,0 +1,27 @@
+<h1 class="standard-section__name">
+  {{ name }}
+</h1>
+<div class="standard-section__articles">
+  {% for item in data | limit(4) %}
+  <article class="standard-article">
+    <figure class="standard-article__image">
+      <img src="assets/media/{{ item.image }}" alt="Imagem do artigo {{ item.title }}" />
+    </figure>
+    <div class="standard-article__content-wrapper">
+      <div class="standard-article__label">
+        {{ item.label }}
+      </div>
+      <h1 class="standard-article__title">
+        {{ item.title }}
+      </h1>
+    </div>
+    <p class="standard-article__description">
+      {{ item.description }}
+    </p>
+    <a href="{{ item.url }}" title="Ir para o artigo" class="standard-article__link"></a>
+  </article>
+  {% endfor %}
+</div>
+<div class="standard-section__lik">
+  <a href="#" title="Ir para a seção Brasil">Brasil +</a>
+</div>
